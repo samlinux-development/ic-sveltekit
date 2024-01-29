@@ -1,0 +1,3 @@
+service : {
+  sayHelloTo: (text) -> (text) query;
+}
