@@ -17,10 +17,18 @@ This repository is made for my personal use, but feel free to use it as a templa
 ## Getting started
 Make sure you have [node.js](https://nodejs.org/) installed. Node.js version 16 or later is required.
 
-```
-git clone https://github.com/samlinux-development/ic-svelte-starter.git
-cd ic-svelte-starter.git
+```bash
+mkdir myapp && cd myapp
+
+# terminal 1
+dfx start --clean
+
+# terminal 2
+npx degit https://github.com/samlinux-development/ic-sveltekit.git
 npm install
+
+dfx deploy 
+dfx canister id frontend
 ```
 
 ## DFX
