@@ -6,7 +6,7 @@
 
 This repository is meant to give [SvelteKit](https://kit.svelte.dev/) developers an easy on-ramp to get started with developing decentralized applications (Dapps in short) for the Internet Computer blockchain.
 
-Svelte  version:  4.2.9   
+Svelte version:  4.2.9   
 SvelteKit version: 2.5.0  
 @dfinity/agent: 0.20.2   
 
@@ -17,6 +17,8 @@ This repository is made for my personal use, but feel free to use it as a templa
 ## Getting started
 Make sure you have [node.js](https://nodejs.org/) installed. Node.js version 16 or later is required.
 
+
+### Fast Track
 ```bash
 mkdir myapp && cd myapp
 
@@ -28,7 +30,7 @@ npx degit https://github.com/samlinux-development/ic-sveltekit.git
 npm install
 
 dfx deploy 
-dfx canister id frontend
+echo http://$(dfx canister id frontend).localhost:4943
 ```
 
 ## DFX
