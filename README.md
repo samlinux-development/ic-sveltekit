@@ -4,6 +4,8 @@
 
 # SvelteKit Dapp template
 
+This project is provided by the [IC-Academy](https://blog.icacademy.at/blogs/starterKit) to help you get started with development on the Internet Computer using SvelteKit, TypeScript and Vite.
+
 This repository is meant to give [SvelteKit](https://kit.svelte.dev/) developers an easy on-ramp to get started with developing decentralized applications (Dapps in short) for the Internet Computer blockchain.
 
 Svelte version:  4.2.9   
