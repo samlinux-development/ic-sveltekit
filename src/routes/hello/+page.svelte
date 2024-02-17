@@ -1,38 +1,30 @@
 <script lang="ts">
-  import { createActor } from '../../declarations/backend';
+  import { ic } from '../../stores/ic';
   import dataStore from '../../stores/data';
 
   let input = '', greeting = '';
 
   const handleOnSubmit = async () => {
+    try {
 
-  try {
-    // Canister IDs are automatically expanded to .env config - see vite.config.ts
-    const canisterId = import.meta.env.VITE_BACKEND_CANISTER_ID;
+      // Call the IC
+      
+      let query = {
+          query: input,
+          date: new Date()
+        };
 
-    // We pass the host instead of using a proxy to support NodeJS >= v17 (ViteJS issue: https://github.com/vitejs/vite/issues/4794)
-    const host = import.meta.env.VITE_HOST || import.meta.env.DFX_HOST || 'https://ic0.app';
-
-    // Create an actor to interact with the IC for a particular canister ID
-    const actor = createActor(canisterId, { agentOptions: { host } });
-    // Call the IC
+      dataStore.update((store) => ({
+        ...store,
+        hello: [...store.hello, query]
+      }))
     
-    let query = {
-        query: input,
-        date: new Date()
-      };
+      greeting = await $ic.actor.sayHelloTo(input);
+      input = '';
 
-    dataStore.update((store) => ({
-      ...store,
-      hello: [...store.hello, query]
-    }))
-  
-    greeting = await actor.sayHelloTo(input);
-    input = '';
-
-  } catch (err) {
-      console.error('>> ',err);
-  }
+    } catch (err) {
+        console.error('>> ',err);
+    }
 };
 </script>
 
