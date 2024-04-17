@@ -32,6 +32,8 @@ node --version
 dfx --version
 ```
 
+>Tested with DFX version 0.19.0
+
 You can install DFX by running the following command in your terminal.
 ```bash
 sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
